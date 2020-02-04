@@ -9,7 +9,7 @@ Please see the [opencv-3.1](https://github.com/yjxiong/dense_flow/tree/opencv-3.
 
 ### Install
 ```
-git clone --recursive http://github.com/yjxiong/dense_flow
+git clone --recursive git@github.com:valterlej/dense_flow.git
 mkdir build && cd build
 cmake .. && make -j
 ```
