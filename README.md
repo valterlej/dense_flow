@@ -14,7 +14,7 @@ mkdir build && cd build
 cmake .. && make -j
 ```
 
-### To use as a python module
+### Using as a python module
 Create symbolic links to extract_gpu and extract_cpu programs
 ```
 ln -s dense_flow/extract_gpu extract_gpu
