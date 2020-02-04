@@ -14,6 +14,13 @@ mkdir build && cd build
 cmake .. && make -j
 ```
 
+# To use as a python module
+Create symbolic links to extract_gpu and extract_cpu programs
+```
+ln -s dense_flow/extract_gpu extract_gpu
+ln -s dense_flow/extract_cpu extract_cpu
+```
+
 ### Usage
 ```
 ./extract_gpu -f=test.avi -x=tmp/flow_x -y=tmp/flow_y -i=tmp/image -b=20 -t=1 -d=0 -s=1 -o=dir
