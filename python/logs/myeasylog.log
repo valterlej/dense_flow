@@ -1,0 +1,14 @@
+2020-02-03 21:44:20,117 FATAL [default] Check failed: [video_stream.isOpened()] Cannot open video stream "ex2.avi" for optical flow extraction.
+2020-02-03 21:44:20,117 WARN  [default] Aborting application. Reason: Fatal log at [/home/valter/projetos/dense_flow/src/dense_flow_gpu.cpp:19]
+2020-02-03 22:22:37,342 FATAL [default] Check failed: [video_stream.isOpened()] Cannot open video stream "/tmp/flow/test.avi" for optical flow extraction.
+2020-02-03 22:22:37,342 WARN  [default] Aborting application. Reason: Fatal log at [/home/valter/projetos/dense_flow/src/dense_flow_gpu.cpp:19]
+2020-02-03 22:23:44,350 FATAL [default] Check failed: [video_stream.isOpened()] Cannot open video stream "/tmp/flow/test.avi" for optical flow extraction.
+2020-02-03 22:23:44,350 WARN  [default] Aborting application. Reason: Fatal log at [/home/valter/projetos/dense_flow/src/dense_flow_gpu.cpp:19]
+2020-02-03 22:24:09,212 FATAL [default] Check failed: [video_stream.isOpened()] Cannot open video stream "/tmp/flow/test.avi" for optical flow extraction.
+2020-02-03 22:24:09,212 WARN  [default] Aborting application. Reason: Fatal log at [/home/valter/projetos/dense_flow/src/dense_flow_gpu.cpp:19]
+2020-02-03 22:24:15,461 FATAL [default] Check failed: [video_stream.isOpened()] Cannot open video stream "/tmp/flow/test.avi" for optical flow extraction.
+2020-02-03 22:24:15,461 WARN  [default] Aborting application. Reason: Fatal log at [/home/valter/projetos/dense_flow/src/dense_flow_gpu.cpp:19]
+2020-02-03 22:24:36,799 FATAL [default] Check failed: [video_stream.isOpened()] Cannot open video stream "/tmp/flow/test.avi" for optical flow extraction.
+2020-02-03 22:24:36,799 WARN  [default] Aborting application. Reason: Fatal log at [/home/valter/projetos/dense_flow/src/dense_flow_gpu.cpp:19]
+2020-02-03 22:25:10,720 FATAL [default] CRASH HANDLED; Application has crashed due to [SIGSEGV] signal
+2020-02-03 22:25:10,720 WARN  [default] Aborting application. Reason: Fatal log at [/home/valter/projetos/dense_flow/include/easylogging++/src/easylogging++.h:5583]
