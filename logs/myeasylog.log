@@ -1,2 +1,0 @@
-2020-02-04 11:04:06,763 FATAL [default] Check failed: [video_stream.isOpened()] Cannot open video stream "ex2.avi" for optical flow extraction.
-2020-02-04 11:04:06,763 WARN  [default] Aborting application. Reason: Fatal log at [/home/valter/projetos/dense_flow/src/dense_flow_gpu.cpp:19]
