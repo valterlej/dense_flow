@@ -1,6 +1,8 @@
 import time
 import os
 import argparse
+import cv2
+from dirutils.filetree import File
 
 def calculate_flow(use_gpu=True, device_id=None, vid_file=None, flow_x=None, flow_y=None, image=None, boundary=20, opt_type=1, step=1, out_type='dir'):
     
@@ -58,6 +60,19 @@ def calculate_flow(use_gpu=True, device_id=None, vid_file=None, flow_x=None, flo
         return
 
     os.system(command)
+
+
+def create_flow_video(directory=None, filter=None, video_path=None, frame_rate=25, dimension=None, delete_image_files=True):    
+    d = File(directory, load=True)
+    files = d.get_all_sub_files(filter=filter)   
+
+    writer = cv2.VideoWriter(video_path,cv2.VideoWriter_fourcc('M','J','P','G'), int(frame_rate), (342,256))    
+    for x in files:
+        img = cv2.imread(x.get_path())
+        writer.write(img)
+        if delete_image_files:
+            os.system('rm '+x.get_path())
+    writer.release()
 
 
 if __name__ == '__main__':
