@@ -1,10 +1,10 @@
 import os
 import argparse
 import json
+import glob
 from extract_flow import create_flow_video
 from tqdm import tqdm
 from dirutils.filetree import File
-
 
 def compress_streams(dataset_dir='', id_video='', delete_image_files=True, dimension=(342,256), frame_rate=20):
     id_dir = os.path.join(dataset_dir, id_video)   
@@ -24,16 +24,16 @@ def compress_streams(dataset_dir='', id_video='', delete_image_files=True, dimen
 
     if delete_image_files:
         # delete if exists rgb files (flipped)
-        d = File(hflipped_streams, load=True)
-        files = d.get_all_sub_files(filter='rgb')   
+        files = glob.glob(hflipped_streams+'/rgb*.jpg')
+        files.sort(reverse=False)       
         for x in files:
-            os.system('rm '+x.get_path())
+            os.system('rm '+x)
         
         # delete if exists rgb files (original)
-        d = File(original_streams, load=True)
-        files = d.get_all_sub_files(filter='rgb')   
+        files = glob.glob(original_streams+'/rgb*.jpg')
+        files.sort(reverse=False)
         for x in files:
-            os.system('rm '+x.get_path())
+            os.system('rm '+x)
 
         # delete hflipped_streams
         os.system('rm -R '+hflipped_streams)
@@ -58,6 +58,8 @@ def dataset_preprocess(original_dataset_dir='',videos_dir='', file_ids='', start
         print(id)
         compress_streams(dataset_dir=videos_dir, id_video=id, delete_image_files=delete_files, dimension=dimension, frame_rate=frame_rate)    
 
+
+#compress_streams(dataset_dir='/home/valter/teste/activitynet_videos/train',id_video='v_0AjYz-s4Rek', delete_image_files=True, dimension=(342,256), frame_rate=20)
         
 
 if __name__ == '__main__':
@@ -74,4 +76,7 @@ if __name__ == '__main__':
     
     #dim = args.dimension.split('-')
     #dimension = (342,256)
-    dataset_preprocess(original_dataset_dir=args.original_dataset_dir, videos_dir=args.videos_dir, file_ids=args.file_ids, start_index=args.start_id, end_index=args.end_id, dimension=(342,256), frame_rate=args.frame_rate, delete_files=args.delete_files)         
+    dataset_preprocess(original_dataset_dir=args.original_dataset_dir, videos_dir=args.videos_dir, file_ids=args.file_ids, start_index=args.start_id, end_index=args.end_id, dimension=(342,256), frame_rate=args.frame_rate, delete_files=args.delete_files)
+
+# exemplo de comando
+# python compress_dataset_activitynet.py -dd /media/valter/Arquivos/Datasets/actions/activitynet/captions -vd /media/valter/Arquivos/Datasets/actions/activitynet_videos/train -fid train_ids.json -s 0 -e 2000 -fr 20 -df True
