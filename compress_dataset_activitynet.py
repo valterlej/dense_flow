@@ -2,7 +2,7 @@ import os
 import argparse
 import json
 import glob
-from extract_flow import create_flow_video
+from dense_flow.extract_flow import create_flow_video
 from tqdm import tqdm
 from dirutils.filetree import File
 
